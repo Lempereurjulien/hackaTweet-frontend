@@ -20,3 +20,42 @@
 .title a:hover, .title a:focus, .title a:active {
   text-decoration: underline;
 }
+
+/****GRID*********/
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: repeat(4, 25vh);
+  border: 1px black solid;
+}
+
+.left{
+  border: 1px black solid;
+  grid-row-start: 1;
+  grid-row-end: -1;
+
+  grid-column-start: 1;
+  grid-column-end: 1;
+}
+
+.header{
+  border: 1px black solid;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+.content{
+  border: 1px black solid;
+  grid-row-start: 2;
+  grid-row-end: -1;
+}
+ 
+.right{
+  border: 1px black solid;
+  grid-row-start: 1;
+  grid-row-end: -1;
+  grid-column-start: 3;
+  grid-column-end: 3;
+}
+
