@@ -1,0 +1,38 @@
+.modal{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+
+}
+.close{
+    right: 5px;
+    width: 50px;
+    height: 50px;
+}
+.modalInput{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.input{
+    background-color:rgb(0 0 0 / 75%) ;
+    border-radius: 20px;
+    color: white;
+    margin-top: 15px;
+}
+.inputB{
+    border-radius: 20px;
+    margin-top: 15px;
+    background-color:white ;
+    border: none;
+    width: 180px;
+}
