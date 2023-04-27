@@ -3,7 +3,7 @@ import Button from '../components/Button';
 function Home() {
   return (
     <div>
-      <Button text={'Sign up'}></Button>
+      <Button text={'Sign in'}></Button>
     </div>
   );
 }
