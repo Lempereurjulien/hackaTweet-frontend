@@ -59,7 +59,7 @@ const [signInPassword,setSignInPassword ] = useState('');
 const user = useSelector((state) => state.users.value);
 
 if(user.token){
-    router.push("/");
+    router.push("/home");
 }
 
       const signUp = () =>{
