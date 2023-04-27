@@ -1,13 +1,9 @@
 import styles from '../styles/Home.module.css';
-
+import Button from '../components/Button';
 function Home() {
   return (
     <div>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-      </main>
+      <Button text={'Sign up'}></Button>
     </div>
   );
 }
