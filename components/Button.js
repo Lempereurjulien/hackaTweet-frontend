@@ -58,9 +58,9 @@ const [signInPassword,setSignInPassword ] = useState('');
 
 const user = useSelector((state) => state.users.value);
 
-// if(user.token){
-//     router.push("/");
-// }
+if(user.token){
+    router.push("/");
+}
 
       const signUp = () =>{
         console.log('ça marche')
