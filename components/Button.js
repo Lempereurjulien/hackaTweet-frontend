@@ -7,9 +7,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import {login, logout} from '../reducers/users';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import {useRouter} from 'next/router';
+
 
 export default function Button(props){
-
+    
+    const router = useRouter();
     const dispatch = useDispatch();
 
     const [modal, setModal] = useState(false);
@@ -53,6 +56,11 @@ const [signUpPassword, setSignUpPassword] = useState('');
 const [signInUsername,setSignInUsername ] = useState('');
 const [signInPassword,setSignInPassword ] = useState('');
 
+const user = useSelector((state) => state.users.value);
+
+// if(user.token){
+//     router.push("/");
+// }
 
       const signUp = () =>{
         console.log('ça marche')
