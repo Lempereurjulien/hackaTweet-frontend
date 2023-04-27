@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { Provider } from 'react-redux';
 import users from '../reducers/users';
 import {persistStore, persistReducer} from 'redux-persist';
-import {PersistGate} from 'redux-persist/es/integration/react';
+import {PersistGate} from 'redux-persist/integration/react';
 import storage from 'redux-persist/lib/storage';
 import { combineReducers,configureStore } from '@reduxjs/toolkit';
 
