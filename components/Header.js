@@ -3,11 +3,15 @@ import React from "react";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
+import { addTweet } from "../reducers/tweets";
 
 export default function Header() {
   const [postTweet, setPostTweet] = useState([]);
   const [postUser, setPostUser] = useState("");
   const [postToken, setPostToken] = useState("");
+
+  const router = useRouter();
+  const dispatch = useDispatch();
 
   const user = useSelector((state) => state.users.value);
   console.log(user);
@@ -26,21 +30,33 @@ export default function Header() {
       .then((data) => {
         console.log(data, "C LA DATA UEUE");
         if (data.token) {
-          dispatch();
+          dispatch(
+            addTweet({ tweet: postTweet, user: postUser, token: user.token })
+          );
+          setPostTweet([]);
+          setPostUser("");
+          setPostToken("");
+        } else {
+          alert(data.error, "You must be connected");
         }
       });
   };
   return (
     <div className={styles.header}>
       <div className={styles.title}>
-        <textarea
+        <input
+          type="text"
           maxLength={250}
           name="postContent"
           resize="none"
           rows={5}
           cols={75}
           placeholder="Write something..."
-        ></textarea>
+          onChange={(e) => setPostTweet(e.target.value)}
+        ></input>
+        <button className={TweetButton} onClick={() => postingTweet()}>
+          Tweet
+        </button>
       </div>
     </div>
   );
