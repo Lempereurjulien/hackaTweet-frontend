@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 export default function Trends(){
 
-    // const hashtag = useSelector((state) => state.hashtag.value);
+     const hashtag = useSelector((state) => state.hashtag.value);
 
     // const hashView = hashtag.map(data => {
         

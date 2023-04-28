@@ -17,7 +17,7 @@ const user = useSelector((state) => state.users.value);
          })
     }, [])
     // const articles = articleFilter.map((data, i) => { 
-    //     const isBookmarked = bookmarks.some(bookmark => bookmark.title === data.title);
+    //     const isBookmarked = bookmarks.some(bookmark => bookmark.titlecle === data.title);
     //     return <Article key={i} {...data} isBookmarked={isBookmarked} />;
     //   });
     console.log(tweet);
