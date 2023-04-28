@@ -58,7 +58,7 @@ export default function Header() {
         >
           Tweet
         </button>
-        <span className={styles.counter}>{counter}</span>
+        <span className={styles.counter}>{postTweet.length}/280</span>
       </div>
     </div>
   );
