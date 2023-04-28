@@ -69,6 +69,7 @@ if(user.token){
                 body: JSON.stringify({ firstname : signUpFirstrname,username: signUpUsername, password: signUpPassword }),
             }).then(response => response.json())
                 .then(data => {
+                    console.log('data', data);
                     if (data.result) {
                         // dispatch(login({firstname : signUpFirstrname, username : signUpUsername}))
                         dispatch(login({ firstname : signUpFirstrname,username: signUpUsername, token: data.token }));
@@ -76,7 +77,9 @@ if(user.token){
                         setSignUpUsername('');
                         setSignUpPassword('');
                     }
-                    alert(data.error);
+                    else{
+                        alert(data.error);
+                    }
                 });
       }
 
