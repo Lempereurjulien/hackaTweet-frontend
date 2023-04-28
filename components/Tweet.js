@@ -3,16 +3,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
+import { addHashtag, removeHashtag } from '../reducers/hashtag';
 export default function Tweet(props){
+
+    const dispatch = useDispatch();
 
     const users = useSelector((state) => state.users.value)
 
-    console.log(users)
     const [like, setLike] = useState(false);
     let trashStyle = {'color' : 'white'};
 
+    const pattern = /#[a-z]*/gi;
+
+    /**AJOUTER HASHTAG DANS REDUCER*/
+
+    // const hastag = props.tweet.match(pattern);
+    // if(hastag){
+    //     dispatch(addHashtag(hastag));
+    // }
+
+    let tweetText = 'Tweet'
     
+    /**Ajouter tras pour supprimer tweet */
     let deleteTweet = [];
     // if(props.username === users.username){
     //     deleteTweet = <FontAwesomeIcon  className={styles.userSection} icon={faTrash} style={trashStyle}/>;
