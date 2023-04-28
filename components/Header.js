@@ -14,7 +14,6 @@ export default function Header() {
   const dispatch = useDispatch();
 
   const user = useSelector((state) => state.users.value);
-  console.log(user);
 
   const postingTweet = () => {
     fetch("http://localhost:3000/tweets/tweet", {

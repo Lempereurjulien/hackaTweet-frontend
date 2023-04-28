@@ -10,16 +10,16 @@ export const tweetSlice = createSlice({
   initialState,
   reducers: {
     addTweet: (state, action) => {
-      state.value.push(action.payload.tweet);
+      state.value.push(action.payload);
     },
     removeTweet: (state, action) => {
       state.value.filter((data) => data !== action.payload.tweet);
     },
-    // emptystring: (state) => {
-    //   state.value.push([]);
-    // },
+    removeAll: (state, action) => {
+      state.value = [];
+    },
   },
 });
 
-export const { addTweet, removeTweet } = usersSlice.actions;
+export const { addTweet, removeTweet, removeAll } = tweetSlice.actions;
 export default tweetSlice.reducer;

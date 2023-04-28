@@ -16,13 +16,16 @@ const user = useSelector((state) => state.users.value);
             setTweet(tweets.map(data => data));
          })
     }, [])
-
+    // const articles = articleFilter.map((data, i) => { 
+    //     const isBookmarked = bookmarks.some(bookmark => bookmark.titlecle === data.title);
+    //     return <Article key={i} {...data} isBookmarked={isBookmarked} />;
+    //   });
+    console.log(tweet);
     const allTweet = tweet.map(data => {
-        <Tweet></Tweet>
+        console.log(data);
+        return <Tweet id={data._id} token={data.user.token} username ={data.user.username} firstname={data.user.firstname} tweet = {data.tweet} date={data.date} ></Tweet>
     })
-    console.log(allTweet)
 
-    console.log('tweets', tweet);
     return(
         <div>
        {allTweet}
