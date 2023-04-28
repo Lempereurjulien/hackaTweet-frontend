@@ -63,7 +63,6 @@ if(user.token){
 }
 
       const signUp = () =>{
-        console.log('ça marche')
             fetch('http://localhost:3000/users/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -76,25 +75,29 @@ if(user.token){
                         setSignUpFirstrname('');
                         setSignUpUsername('');
                         setSignUpPassword('');
-                        // setIsModalVisible(false)
                     }
+                    alert(data.error);
                 });
       }
 
       const signIn =() =>{
+        console.log('ça marche')
         fetch('http://localhost:3000/users/signin', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ username: signInUsername, password: signInPassword }),
 		}).then(response => response.json())
 			.then(data => {
+                console.log('data', data)
 				if (data.result) {
-					dispatch(login({ username: signInUsername, token: data.token }));
+					dispatch(login({firstname : data.username, username: signInUsername, token: data.token }));
 					setSignInUsername('');
 					setSignInPassword('');
-					// setIsModalVisible(false)
-
 				}
+                else{
+                    alert(data.error);
+                }
+
 			});
 	};
       
@@ -111,7 +114,7 @@ if(user.token){
       <input type="text" placeholder='Firstname' className={stylesM.input} onChange={(e) => setSignUpFirstrname(e.target.value)}></input>
       <input type="text" placeholder='Username' className={stylesM.input} onChange={(e) => setSignUpUsername(e.target.value)}></input>
       <input type="password" placeholder='Password' className={stylesM.input} onChange={(e) => setSignUpPassword(e.target.value)}></input>
-      <button className={stylesM.inputB} onClick={signUp()}>Sign up</button>
+      <button className={stylesM.inputB} onClick={() =>signUp()}>Sign up</button>
       </div>
       </div>
   </ReactModal>
@@ -123,8 +126,8 @@ if(user.token){
       <div className={stylesM.modalInput}>
       <span className={stylesM.text}>Connect to Hackatweet</span>
       <input type="text" placeholder='Username' className={stylesM.input} onChange={(e) => setSignInUsername(e.target.value)}></input>
-      <input type="password" placeholder='Password' className={stylesM.input} onChange={(e) => setSignInUsername(e.target.value)}></input>
-      <button className={stylesM.inputB} onClick={signUp()}>Sign In</button>
+      <input type="password" placeholder='Password' className={stylesM.input} onChange={(e) => setSignInPassword(e.target.value)}></input>
+      <button className={stylesM.inputB} onClick={() =>signIn()}>Sign In</button>
       </div>
       </div>
   </ReactModal>

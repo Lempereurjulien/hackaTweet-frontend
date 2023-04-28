@@ -1,11 +1,12 @@
 import styles from '../styles/Home.module.css';
 import Button from '../components/Button';
+import Left from './Left';
 function Home() {
   return (
     <div className={styles.container}>
 
       <div className={styles.left}>
-
+      <Left/>
       </div>
 
       <div className={styles.header}>
