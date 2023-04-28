@@ -10,7 +10,6 @@ export default function Header() {
   const [postToken, setPostToken] = useState("");
 
   const user = useSelector((state) => state.users.value);
-  console.log(user);
 
   const postingTweet = () => {
     fetch("http://localhost:3000/tweets/tweet", {

@@ -1,3 +1,9 @@
+.headerTweet{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
 .globalTweet{
     display: flex;
     flex-direction: column;
@@ -7,4 +13,17 @@
 }
 .img{
     width: 60px;
+}
+
+.username{
+color : gray;
+margin : 15px;
+}
+
+.contentTweet{
+    margin-bottom: 15px;
+}
+
+.actionTweet{
+    margin-left: 15px;
 }

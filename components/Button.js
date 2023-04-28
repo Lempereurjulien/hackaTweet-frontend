@@ -19,7 +19,6 @@ export default function Button(props){
     const toogleModal = () =>{
         setModal(!modal)
    }
-   console.log(modal);
 /**Style */
     let butonSignIn = {'background-color' :'#161D28',
                         'color' : '#378FEE'
@@ -69,7 +68,6 @@ if(user.token){
                 body: JSON.stringify({ firstname : signUpFirstrname,username: signUpUsername, password: signUpPassword }),
             }).then(response => response.json())
                 .then(data => {
-                    console.log('data', data);
                     if (data.result) {
                         // dispatch(login({firstname : signUpFirstrname, username : signUpUsername}))
                         dispatch(login({ firstname : signUpFirstrname,username: signUpUsername, token: data.token }));
@@ -84,14 +82,12 @@ if(user.token){
       }
 
       const signIn =() =>{
-        console.log('ça marche')
         fetch('http://localhost:3000/users/signin', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ username: signInUsername, password: signInPassword }),
 		}).then(response => response.json())
 			.then(data => {
-                console.log('data', data)
 				if (data.result) {
 					dispatch(login({firstname : data.username, username: signInUsername, token: data.token }));
 					setSignInUsername('');

@@ -10,7 +10,6 @@ export default function Left(){
     const dispatch = useDispatch();
 
     const user = useSelector((state) => state.users.value);
-    console.log(user);
 
     const logoutM =() =>{
         dispatch(logout());
