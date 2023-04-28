@@ -15,6 +15,8 @@ function Home() {
       </div>
       <div className={styles.content}>
       <Tweet/>
+      <Tweet/>
+      <Tweet/>
       </div>
       <div className={styles.right}>
 
