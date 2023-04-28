@@ -1,14 +1,8 @@
-<<<<<<< HEAD
 import styles from "../styles/Home.module.css";
 import Button from "../components/Button";
 import Left from "./Left";
+import Content from "./Content";
 import Header from "./Header";
-=======
-import styles from '../styles/Home.module.css';
-import Button from '../components/Button';
-import Left from './Left';
-import Content from './Content';
->>>>>>> content
 function Home() {
   return (
     <div className={styles.container}>
@@ -21,17 +15,10 @@ function Home() {
       <div className={styles.header}>
         <Header />
       </div>
-<<<<<<< HEAD
-      <div className={styles.content}></div>
-      <div className={styles.right}></div>
-=======
       <div className={styles.content}>
-      <Content/>
+        <Content />
       </div>
-      <div className={styles.right}>
-
-      </div>
->>>>>>> content
+      <div className={styles.right}></div>
     </div>
   );
 }

@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { addTweet } from "../reducers/tweets";
 
 export default function Header() {
-  const [postTweet, setPostTweet] = useState([]);
-  const [postUser, setPostUser] = useState("");
+  const [postTweet, setPostTweet] = useState("");
+  //const [postUser, setPostUser] = useState("");
   const [postToken, setPostToken] = useState("");
 
   const router = useRouter();
@@ -22,7 +22,6 @@ export default function Header() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         tweet: postTweet,
-        user: postUser,
         token: user.token,
       }),
     })
@@ -30,33 +29,37 @@ export default function Header() {
       .then((data) => {
         console.log(data, "C LA DATA UEUE");
         if (data.token) {
-          dispatch(
-            addTweet({ tweet: postTweet, user: postUser, token: user.token })
-          );
-          setPostTweet([]);
-          setPostUser("");
-          setPostToken("");
-        } else {
-          alert(data.error, "You must be connected");
+          dispatch(addTweet({ tweet: postTweet, token: user.token }));
+          setPostTweet("");
         }
       });
+  };
+
+  const counter = () => {
+    postTweet.length;
   };
   return (
     <div className={styles.header}>
       <div className={styles.title}>
         <input
           type="text"
-          maxLength={250}
+          maxLength={280}
           name="postContent"
           resize="none"
-          rows={5}
+          rows={10}
           cols={75}
           placeholder="Write something..."
           onChange={(e) => setPostTweet(e.target.value)}
         ></input>
-        <button className={TweetButton} onClick={() => postingTweet()}>
+        <button
+          className={styles.tweetButton}
+          onClick={() => {
+            postingTweet();
+          }}
+        >
           Tweet
         </button>
+        <span className={styles.counter}>{counter}</span>
       </div>
     </div>
   );
