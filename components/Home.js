@@ -1,7 +1,7 @@
 import styles from '../styles/Home.module.css';
 import Button from '../components/Button';
 import Left from './Left';
-import Tweet from './Tweet';
+import Content from './Content';
 function Home() {
   return (
     <div className={styles.container}>
@@ -14,9 +14,7 @@ function Home() {
 
       </div>
       <div className={styles.content}>
-      <Tweet/>
-      <Tweet/>
-      <Tweet/>
+      <Content/>
       </div>
       <div className={styles.right}>
 

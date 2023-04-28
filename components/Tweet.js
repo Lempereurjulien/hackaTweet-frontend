@@ -32,8 +32,17 @@ export default function Tweet(props){
     // }
 
     let heartStyle = {}
+    let number = {};
     
-    like ? heartStyle = {'color' : 'red'} :  heartStyle = {'color' : 'white'}
+    if(like){
+        heartStyle = {'color' : 'red'};
+        number = {'display' : '', 
+                'color' : 'red'}
+    } 
+    else{
+        heartStyle = {'color' : 'white'},
+        number = {'display' : 'none'}
+    }
     return (
         <div className={styles.globalTweet}>
             <div className={styles.headerTweet}>
@@ -45,6 +54,7 @@ export default function Tweet(props){
             </div>
             <div className={styles.actionTweet}>
             <FontAwesomeIcon onClick={() => setLike(!like)} className={styles.userSection} icon={faHeart} style={heartStyle}/>
+                 <span style={number}>1</span>
             {deleteTweet}
             </div>
         </div>
