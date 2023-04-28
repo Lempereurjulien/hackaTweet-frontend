@@ -1,0 +1,10 @@
+.globalTweet{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px gray solid;
+    height: 150px;
+}
+.img{
+    width: 60px;
+}
