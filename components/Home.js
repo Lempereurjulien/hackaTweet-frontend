@@ -1,6 +1,7 @@
 import styles from "../styles/Home.module.css";
 import Button from "../components/Button";
 import Left from "./Left";
+import Header from "./Header";
 function Home() {
   return (
     <div className={styles.container}>
@@ -10,7 +11,9 @@ function Home() {
         <Left />
       </div>
 
-      <div className={styles.header}></div>
+      <div className={styles.header}>
+        <Header />
+      </div>
       <div className={styles.content}></div>
       <div className={styles.right}></div>
     </div>
