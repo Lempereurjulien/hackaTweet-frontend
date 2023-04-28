@@ -1,7 +1,13 @@
 import styles from '../styles/Menu.module.css';
 import Button from '../components/Button';
+import ReactModal from 'react-modal';
+import { useState } from 'react';
+import Modal from '../components/Modal';
+
 
 export default function Menu(){
+   
+
     return(
         <div className={styles.menu}>
 

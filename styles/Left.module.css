@@ -1,0 +1,41 @@
+.global{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 15px;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.twit{
+    width: 60px;
+    transform: rotate(0.5turn);
+    margin-top: 20px;
+  }
+
+  .text{
+    justify-content: end;
+    color : white;
+    flex-direction: column;
+  }
+
+  .users{
+    width: 60px;
+  }
+
+  .button{
+    width: 110px;
+    border-radius: 20px;
+    color: white;
+    background-color: #252D38;
+    border: 1px white solid;
+    margin: 15px;
+  }
+
+  .label{
+    margin-left: 15px;
+  }
+
+  .username{
+    color : grey;
+  }
