@@ -20,5 +20,5 @@ export const hashtagSlice = createSlice({
 })
 
 export const {addHashtag, removeHashtag} = hashtagSlice.actions;
-export default usersSlice.reducer;
+export default hashtagSlice.reducer;
 
