@@ -1,8 +1,12 @@
 import styles from '../styles/Home.module.css';
 import Button from '../components/Button';
 import Left from './Left';
+<<<<<<< HEAD
 import Content from './Content';
 import Header from '../components/Header';
+=======
+import Right from './Right';
+>>>>>>> trends
 function Home() {
   return (
     <div className={styles.container}>
@@ -19,7 +23,7 @@ function Home() {
       <Content/>
       </div>
       <div className={styles.right}>
-
+      <Right/>
       </div>
     </div>
   );
